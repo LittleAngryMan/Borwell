@@ -1,0 +1,30 @@
+package controller;
+
+import view.ChallengeFrame;
+import view.ChallengeMenuBar;
+import view.InputPanel;
+import view.ResultsPanel;
+
+import model.Room;
+
+public class ChallengeController {
+	
+	private ChallengeFrame view;
+	private ChallengeMenuBar menuPanel;
+	private InputPanel inputPanel;
+	private ResultsPanel resultsPanel;
+	
+	private Room model;
+	
+	public ChallengeController(ChallengeFrame view, Room model) {
+		
+		/*Initialisation of View and Model*/
+		this.view = view;
+		this.model = model;
+		
+		menuPanel = view.getChallengeMenuBar();
+		inputPanel = view.getInputPanel();
+		resultsPanel = view.getResultsPanel();
+	}
+	
+}

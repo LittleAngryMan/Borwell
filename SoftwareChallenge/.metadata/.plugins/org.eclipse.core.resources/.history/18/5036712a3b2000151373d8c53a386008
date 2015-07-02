@@ -1,0 +1,19 @@
+package controller;
+
+import view.ChallengeFrame;
+import view.ChallengeMenuBar;
+import view.InputPanel;
+import view.ResultsPanel;
+
+import model.Room;
+
+public class ChallengeController {
+	
+	private ChallengeFrame view;
+	private ChallengeMenuBar menuPanel;
+	private InputPanel inputPanel;
+	private ResultsPanel resultsPanel;
+	
+	private Room model;
+	
+}

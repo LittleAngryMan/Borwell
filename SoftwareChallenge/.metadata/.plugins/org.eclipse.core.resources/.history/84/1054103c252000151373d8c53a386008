@@ -1,0 +1,16 @@
+package view;
+
+import javax.swing.JFrame;
+
+public class ChallengeFrame extends JFrame {
+	
+	private InputPanel inputPane;
+	
+	public ChallengeFrame() {
+		
+		this.setTitle("Borwell Software Challenge");
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		
+	}
+}

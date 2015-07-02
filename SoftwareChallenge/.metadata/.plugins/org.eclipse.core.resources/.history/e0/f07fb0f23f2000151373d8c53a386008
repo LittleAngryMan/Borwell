@@ -1,0 +1,9 @@
+package main;
+
+import view.ChallengeFrame;
+
+public class ApplicationLoader {
+	public static void main(String[] args) {
+		ChallengeFrame view = new ChallengeFrame();
+	}
+}

@@ -1,0 +1,15 @@
+package view;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class ResultsPanel extends JPanel {
+	
+	private JLabel areaLabel, paintLabel, volumeLabel;
+	private JTextField areaDisplay, paintDisplau, volumeDisplay;
+	
+	public ResultsPanel() {
+		
+	}
+}

@@ -1,0 +1,152 @@
+package view;
+
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.border.TitledBorder;
+
+
+@SuppressWarnings("serial")
+public class ResultsPanel extends JPanel {
+	
+	private JLabel areaLabel, paintLabel, volumeLabel;
+	private JTextArea areaDisplay, paintDisplay, volumeDisplay;
+	private JButton saveButton, closeButton;
+	
+	public ResultsPanel() {
+		/*Panel Initiation and Constraint Initiation*/
+		JPanel resultsPanelPane = new JPanel();
+		resultsPanelPane.setLayout(new GridBagLayout());
+		GridBagConstraints resultsPanelGridBag = new GridBagConstraints();
+		resultsPanelGridBag.fill = GridBagConstraints.VERTICAL;
+		
+		/*Initialise Temporary JPanel*/
+		JPanel resultsTempPanel;
+		
+		/*Area*/
+		resultsTempPanel = new JPanel();
+		//Label
+		areaLabel = new JLabel("Area (in Meters^2):");
+		resultsPanelGridBag.gridx = 0;
+		resultsPanelGridBag.gridy = 0;
+		resultsPanelGridBag.anchor = GridBagConstraints.LINE_START;
+		resultsTempPanel.add(areaLabel, resultsPanelGridBag);
+		//TextArea
+		areaDisplay = new JTextArea();
+		areaDisplay.setPreferredSize(new Dimension(174, 25));
+		areaDisplay.setEditable(false);
+		resultsPanelGridBag.gridx = 1;
+		resultsPanelGridBag.gridy = 0;
+		resultsPanelGridBag.anchor = GridBagConstraints.LINE_END;
+		resultsTempPanel.add(areaDisplay, resultsPanelGridBag);
+		//Add Panel to Pane
+		resultsPanelGridBag.gridx = 0;
+		resultsPanelGridBag.gridy = 0;
+		resultsPanelGridBag.ipadx = 50;
+		resultsPanelGridBag.ipady = 15;
+		resultsPanelPane.add(resultsTempPanel, resultsPanelGridBag);
+		
+		/*Paint*/
+		resultsTempPanel = new JPanel();
+		//Label
+		paintLabel = new JLabel("Paint Needed (in Litres):");
+		resultsPanelGridBag.gridx = 0;
+		resultsPanelGridBag.gridy = 0;
+		resultsPanelGridBag.anchor = GridBagConstraints.LINE_START;
+		resultsTempPanel.add(paintLabel, resultsPanelGridBag);
+		//TextArea
+		paintDisplay = new JTextArea();
+		paintDisplay.setPreferredSize(new Dimension(174, 25));
+		paintDisplay.setEditable(false);
+		resultsPanelGridBag.gridx = 1;
+		resultsPanelGridBag.gridy = 0;
+		resultsPanelGridBag.anchor = GridBagConstraints.LINE_END;
+		resultsTempPanel.add(paintDisplay, resultsPanelGridBag);
+		//Add Panel to Pane
+		resultsPanelGridBag.gridx = 0;
+		resultsPanelGridBag.gridy = 1;
+		resultsPanelGridBag.ipadx = 50;
+		resultsPanelGridBag.ipady = 15;
+		resultsPanelPane.add(resultsTempPanel, resultsPanelGridBag);
+		
+		/*Volume*/
+		resultsTempPanel = new JPanel();
+		//Label
+		volumeLabel = new JLabel("Volume (in Meters^3):");
+		resultsPanelGridBag.gridx = 0;
+		resultsPanelGridBag.gridy = 0;
+		resultsPanelGridBag.anchor = GridBagConstraints.LINE_START;
+		resultsTempPanel.add(volumeLabel, resultsPanelGridBag);
+		//TextArea
+		volumeDisplay = new JTextArea();
+		volumeDisplay.setPreferredSize(new Dimension(174, 25));
+		volumeDisplay.setEditable(false);
+		resultsPanelGridBag.gridx = 1;
+		resultsPanelGridBag.gridy = 0;
+		resultsPanelGridBag.anchor = GridBagConstraints.LINE_END;
+		resultsTempPanel.add(volumeDisplay, resultsPanelGridBag);
+		//Add Panel to Pane
+		resultsPanelGridBag.gridx = 0;
+		resultsPanelGridBag.gridy = 2;
+		resultsPanelGridBag.ipadx = 50;
+		resultsPanelGridBag.ipady = 15;
+		resultsPanelPane.add(resultsTempPanel, resultsPanelGridBag);
+		
+		/*Buttons*/
+		resultsTempPanel = new JPanel();
+		
+		//Save Button
+		saveButton = new JButton("Save Results");
+		resultsPanelGridBag.gridx = 0;
+		resultsPanelGridBag.gridy = 1;
+		resultsPanelGridBag.fill = GridBagConstraints.HORIZONTAL;
+		//Add Button to Panel
+		resultsTempPanel.add(saveButton, resultsPanelGridBag);
+		
+		//Close Button
+		closeButton = new JButton("Close");
+		resultsPanelGridBag.gridx = 0;
+		resultsPanelGridBag.gridy = 2;
+		resultsPanelGridBag.fill = GridBagConstraints.HORIZONTAL;
+		//Add Button to Panel
+		resultsTempPanel.add(closeButton, resultsPanelGridBag);
+		
+		//Add Panel to Pane
+		resultsPanelGridBag.gridx = 0;
+		resultsPanelGridBag.gridy = 3;
+		resultsPanelGridBag.gridwidth = 2;
+		resultsPanelPane.add(resultsTempPanel, resultsPanelGridBag);
+		
+		resultsPanelPane.setBorder(new TitledBorder("Results"));
+		
+		this.add(resultsPanelPane);
+	}
+	
+	/*Text Setters*/
+	public void setAreaDisplay(Double area) {
+		areaDisplay.setText(String.valueOf(area));
+	}
+	
+	public void setPaintDisplay(Double paint) {
+		paintDisplay.setText(String.valueOf(paint));
+	}
+	
+	public void setVolumeDisplay(Double volume) {
+		volumeDisplay.setText(String.valueOf(volume));
+	}
+	
+	/*ActionListeners*/
+	public void addSaveActionListener(ActionListener saveAL) {
+		saveButton.addActionListener(saveAL);
+	}
+	
+	public void addCloseActionListener(ActionListener closeAL) {
+		closeButton.addActionListener(closeAL);
+	}
+}

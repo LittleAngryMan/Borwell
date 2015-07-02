@@ -1,0 +1,12 @@
+package view;
+
+import javax.swing.JFrame;
+
+public class ChallengeFrame extends JFrame {
+	
+	private InputPanel inputPane;
+	
+	public ChallengeFrame() {
+		
+	}
+}

@@ -1,0 +1,29 @@
+package view;
+
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class ResultsPanel extends JPanel {
+	
+	private JLabel areaLabel, paintLabel, volumeLabel;
+	private JTextField areaDisplay, paintDisplau, volumeDisplay;
+	
+	public ResultsPanel() {
+		/*Panel Initiation and Constraint Initiation*/
+		JPanel resultsPanelPane = new JPanel();
+		resultsPanelPane.setLayout(new GridBagLayout());
+		GridBagConstraints resultsPanelGridBag = new GridBagConstraints();
+		resultsPanelGridBag.fill = GridBagConstraints.HORIZONTAL;
+		
+		/*Initialise Temporary JPanel*/
+		JPanel resultsTempPanel;
+		
+		/*Labels*/
+		resultsTempPanel = new JPanel();
+		
+	}
+}

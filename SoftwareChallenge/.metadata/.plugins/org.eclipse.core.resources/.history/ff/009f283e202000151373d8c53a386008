@@ -1,0 +1,85 @@
+package view;
+
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+
+
+public class ResultsPanel extends JPanel {
+	
+	private JLabel areaLabel, paintLabel, volumeLabel;
+	private JTextArea areaDisplay, paintDisplay, volumeDisplay;
+	private JButton saveButton, closeButton;
+	
+	public ResultsPanel() {
+		/*Panel Initiation and Constraint Initiation*/
+		JPanel resultsPanelPane = new JPanel();
+		resultsPanelPane.setLayout(new GridBagLayout());
+		GridBagConstraints resultsPanelGridBag = new GridBagConstraints();
+		resultsPanelGridBag.fill = GridBagConstraints.HORIZONTAL;
+		
+		/*Initialise Temporary JPanel*/
+		JPanel resultsTempPanel;
+		
+		/*Labels*/
+		resultsTempPanel = new JPanel();
+		//Area
+		areaLabel = new JLabel();
+		resultsPanelGridBag.gridx = 0;
+		resultsPanelGridBag.gridy = 0;
+		resultsTempPanel.add(areaLabel, resultsPanelGridBag);
+		//Paint
+		paintLabel = new JLabel();
+		resultsPanelGridBag.gridx = 0;
+		resultsPanelGridBag.gridy = 1;
+		resultsTempPanel.add(paintLabel, resultsPanelGridBag);
+		//Volume
+		volumeLabel = new JLabel();
+		resultsPanelGridBag.gridx = 0;
+		resultsPanelGridBag.gridy = 2;
+		resultsTempPanel.add(volumeLabel, resultsPanelGridBag);
+		//Add Panel to Pane
+		resultsPanelGridBag.gridx = 0;
+		resultsPanelPane.add(resultsTempPanel, resultsPanelGridBag);
+		
+		/*TextAreas*/
+		resultsTempPanel = new JPanel();
+		//Area
+		areaDisplay = new JTextArea();
+		resultsPanelGridBag.gridx = 0;
+		resultsPanelGridBag.gridy = 0;
+		resultsTempPanel.add(areaDisplay, resultsPanelGridBag);
+		//Paint
+		paintDisplay = new JTextArea();
+		resultsPanelGridBag.gridx = 0;
+		resultsPanelGridBag.gridy = 1;
+		resultsTempPanel.add(paintDisplay, resultsPanelGridBag);
+		//Volume
+		volumeDisplay = new JTextArea();
+		resultsPanelGridBag.gridx = 0;
+		resultsPanelGridBag.gridy = 2;
+		resultsTempPanel.add(volumeDisplay, resultsPanelGridBag);
+		//Add Panel to Pane
+		resultsPanelGridBag.gridx = 1;
+		resultsPanelPane.add(resultsTempPanel, resultsPanelGridBag);
+		
+		/*Buttons*/
+		//Save Button
+		saveButton = new JButton("Save Results");
+		resultsPanelGridBag.gridx = 0;
+		resultsPanelGridBag.gridy = 1;
+		//Add Button to Pane
+		resultsPanelPane.add(saveButton, resultsPanelGridBag);
+		
+		//Close Button
+		closeButton = new JButton("Close");
+		resultsPanelGridBag.gridx = 0;
+		resultsPanelGridBag.gridy = 2;
+		//Add Button to Pane
+		resultsPanelPane.add(closeButton, resultsPanelGridBag);
+	}
+}

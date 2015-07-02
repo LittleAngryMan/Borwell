@@ -1,0 +1,51 @@
+package model;
+
+public class Room {
+	
+	/*Fields*/
+	private int length;
+	private int width;
+	private int depth;
+	
+	/*Constructors*/
+	//Default Constructor
+	public Room() {
+		length = 0;
+		width = 0;
+		depth = 0;
+	}
+	
+	//Input Constructor
+	public Room(int length, int width, int depth) {
+		this.length = length;
+		this.width = width;
+		this.depth = depth;
+	}
+	
+	/*Methods*/
+	//Setters
+	public void setLength(int length) {
+		this.length = length;
+	}
+	
+	public void setWidth(int width) {
+		this.width = width;
+	}
+	
+	public void setDepth(int depth) {
+		this.depth = depth;
+	}
+	
+	//Getters
+	public int getLength() {
+		return length;
+	}
+	
+	public int getWidth() {
+		return width;
+	}
+	
+	public int getDepth() {
+		return depth;
+	}
+}

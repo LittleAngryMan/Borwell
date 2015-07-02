@@ -1,0 +1,131 @@
+package view;
+
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class InputPanel extends JPanel {
+	
+	private JLabel lengthLabel, widthLabel, depthLabel;
+	private JTextField lengthEntry, widthEntry, depthEntry;
+	private JButton submitButton, resetButton;
+	
+	public InputPanel() {
+		/*Panel Initiation and Constraint Initiation*/
+		JPanel inputPanelPane = new JPanel();
+		inputPanelPane.setLayout(new GridBagLayout());
+		GridBagConstraints inputPanelGridBag = new GridBagConstraints();
+		//inputPanelGridBag.fill = GridBagConstraints.HORIZONTAL;
+		
+		/*Initialise Temporary JPanel*/
+		JPanel inputTempPanel;
+		
+		/*Length Entry*/
+		inputTempPanel = new JPanel();
+		//Label
+		lengthLabel = new JLabel("Length (in Meters):");
+		inputPanelGridBag.gridx = 0;
+		inputPanelGridBag.gridy = 0;
+		inputTempPanel.add(lengthLabel, inputPanelGridBag);
+		//TextField
+		lengthEntry = new JTextField();
+		lengthEntry.setPreferredSize(new Dimension(174, 25));
+		inputPanelGridBag.gridx = 1;
+		inputPanelGridBag.gridy = 0;
+		inputTempPanel.add(lengthEntry, inputPanelGridBag);
+		//Add Panel to Pane
+		inputPanelGridBag.gridx = 0;
+		inputPanelGridBag.gridy = 0;
+		inputPanelPane.add(inputTempPanel, inputPanelGridBag);
+		
+		/*Width Entry*/
+		inputTempPanel = new JPanel();
+		//Label
+		widthLabel = new JLabel("Width (in Meters):");
+		inputPanelGridBag.gridx = 0;
+		inputPanelGridBag.gridy = 0;
+		inputTempPanel.add(widthLabel, inputPanelGridBag);
+		//TextField
+		widthEntry = new JTextField();
+		widthEntry.setPreferredSize(new Dimension(174, 25));
+		inputPanelGridBag.gridx = 1;
+		inputPanelGridBag.gridy = 0;
+		inputTempPanel.add(widthEntry, inputPanelGridBag);
+		//Add Panel to Pane
+		inputPanelGridBag.gridx = 0;
+		inputPanelGridBag.gridy = 1;
+		inputPanelPane.add(inputTempPanel, inputPanelGridBag);
+		
+		/*Depth Entry*/
+		inputTempPanel = new JPanel();
+		//Label
+		depthLabel = new JLabel("Depth (in Meters):");
+		inputPanelGridBag.gridx = 0;
+		inputPanelGridBag.gridy = 0;
+		inputTempPanel.add(depthLabel, inputPanelGridBag);
+		//TextField
+		depthEntry = new JTextField();
+		depthEntry.setPreferredSize(new Dimension(174, 25));
+		inputPanelGridBag.gridx = 1;
+		inputPanelGridBag.gridy = 0;
+		inputTempPanel.add(depthEntry, inputPanelGridBag);
+		//Add Panel to Pane
+		inputPanelGridBag.gridx = 0;
+		inputPanelGridBag.gridy = 2;
+		inputPanelPane.add(inputTempPanel, inputPanelGridBag);
+		
+		/*Buttons*/
+		inputTempPanel = new JPanel();
+		//Submit Button
+		submitButton = new JButton("Submit");
+		inputPanelGridBag.gridx = 0;
+		inputPanelGridBag.gridy = 3;
+		inputPanelGridBag.gridwidth = 1;
+		//Add Button to Pane
+		inputPanelPane.add(submitButton, inputPanelGridBag);
+		
+		//Reset Button
+		resetButton = new JButton("Reset");
+		inputPanelGridBag.gridx = 1;
+		inputPanelGridBag.gridy = 3;
+		inputPanelGridBag.gridwidth = 1;
+		//Add Button to Pane
+		inputPanelPane.add(resetButton, inputPanelGridBag);
+		
+		this.add(inputPanelPane);
+	}
+	
+	/*Functions*/
+	public void resetAction() {
+		lengthEntry.setText("");
+		widthEntry.setText("");
+		depthEntry.setText("");
+	}
+	
+	public String getLengthInput() {
+		return lengthEntry.getText();
+	}
+	
+	public String getWidthInput() {
+		return widthEntry.getText();
+	}
+	
+	public String getDepthInput() {
+		return depthEntry.getText();
+	}
+	
+	/*Listeners*/
+	public void addSumbitActionListener(ActionListener submitAL) {
+		submitButton.addActionListener(submitAL);
+	}
+	
+	public void addResetActionListener(ActionListener resetAL) {
+		resetButton.addActionListener(resetAL);
+	}
+}

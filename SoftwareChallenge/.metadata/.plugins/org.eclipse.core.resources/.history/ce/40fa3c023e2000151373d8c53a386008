@@ -1,0 +1,50 @@
+package controller;
+
+import view.ChallengeFrame;
+import view.ChallengeMenuBar;
+import view.InputPanel;
+import view.ResultsPanel;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JOptionPane;
+
+import model.Room;
+
+public class ChallengeController {
+	
+	private ChallengeFrame view;
+	private ChallengeMenuBar menuPanel;
+	private InputPanel inputPanel;
+	private ResultsPanel resultsPanel;
+	
+	private Room model;
+	
+	public ChallengeController(ChallengeFrame view, Room model) {
+		
+		/*Initialisation of View and Model*/
+		this.view = view;
+		this.model = model;
+		
+		/*Initialisation of View Assets*/
+		menuPanel = view.getChallengeMenuBar();
+		inputPanel = view.getInputPanel();
+		resultsPanel = view.getResultsPanel();
+	}
+	
+	public class submitInputHandler implements ActionListener {
+		public void actionPerformed(ActionEvent event) {
+			/*Validation*/
+			if ((inputPanel.getLengthInput() <= 0) || (inputPanel.getWidthInput() <= 0) || (inputPanel.getDepthInput() <= 0)) {
+				JOptionPane.showMessageDialog(null, "Not an appropriate value.", "ERROR", JOptionPane.ERROR_MESSAGE);
+			}
+			else {
+				model.setLength(inputPanel.getLengthInput());
+				model.setWidth(inputPanel.getWidthInput());
+				model.setDepth(inputPanel.getDepthInput());
+			}
+		}
+	}
+	
+}

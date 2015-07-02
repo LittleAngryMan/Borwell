@@ -1,0 +1,38 @@
+package view;
+
+import java.awt.Dimension;
+
+import javax.swing.JFrame;
+import javax.swing.JTabbedPane;
+
+public class ChallengeFrame extends JFrame {
+	
+	private InputPanel inputPane;
+	private ResultsPanel resultsPane;
+	private MenuBar menuPane;
+	private JTabbedPane challengeTabs;
+	
+	public ChallengeFrame() {
+		
+		/*Set Title and Close Operation*/
+		this.setTitle("Borwell Software Challenge");
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		/*Initiate MenuBar*/
+		menuPane = new MenuBar();
+		this.setJMenuBar(menuPane);
+		
+		/*Initiate Tabs*/
+		challengeTabs = new JTabbedPane(JTabbedPane.TOP);
+		challengeTabs.setPreferredSize(new Dimension(800, 550));
+		this.add(challengeTabs);
+		
+		/*First (Input) Tab*/
+		inputPane = new InputPanel();
+		challengeTabs.add("User Input", inputPane);
+		
+		/*Second (Results) Tab*/
+		resultsPane = new ResultsPanel();
+		challengeTabs.add("Results", resultsPane);
+	}
+}

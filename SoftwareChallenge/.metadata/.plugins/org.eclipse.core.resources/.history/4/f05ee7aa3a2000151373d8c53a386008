@@ -1,0 +1,12 @@
+package controller;
+
+import view.ChallengeFrame;
+import view.ChallengeMenuBar;
+import view.InputPanel;
+import view.ResultsPanel;
+
+import model.Room;
+
+public class ChallengeController {
+
+}

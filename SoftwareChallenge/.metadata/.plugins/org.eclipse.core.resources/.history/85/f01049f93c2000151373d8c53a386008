@@ -1,0 +1,48 @@
+package controller;
+
+import view.ChallengeFrame;
+import view.ChallengeMenuBar;
+import view.InputPanel;
+import view.ResultsPanel;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JOptionPane;
+
+import model.Room;
+
+public class ChallengeController {
+	
+	private ChallengeFrame view;
+	private ChallengeMenuBar menuPanel;
+	private InputPanel inputPanel;
+	private ResultsPanel resultsPanel;
+	
+	private Room model;
+	
+	public ChallengeController(ChallengeFrame view, Room model) {
+		
+		/*Initialisation of View and Model*/
+		this.view = view;
+		this.model = model;
+		
+		/*Initialisation of View Assets*/
+		menuPanel = view.getChallengeMenuBar();
+		inputPanel = view.getInputPanel();
+		resultsPanel = view.getResultsPanel();
+	}
+	
+	public class submitInputHandler implements ActionListener {
+		public void actionPerformed(ActionEvent event) {
+			/*Validation*/
+			if ((inputPanel.getLengthInput().equals(null)) || (inputPanel.getWidthInput().equals("")) || (inputPanel.getDepthInput().equals(""))) {
+				JOptionPane.showMessageDialog(null, "One or more fields have not been filled.", "ERROR", JOptionPane.ERROR_MESSAGE);
+			}
+			else {
+				model.setLength(inputPanel.getLengthInput());
+			}
+		}
+	}
+	
+}

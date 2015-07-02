@@ -1,0 +1,11 @@
+=================================================
+BUILD INSTRUCTIONS FOR BORWELL SOFTWARE CHALLENGE
+=================================================
+For the sake of simplicity, the challenge has
+been converted into an executable .JAR file.
+Simply run the file titled: 'BorwellChallenge'
+located int the 'SoftwareChallenge' folder.
+All sources files and folders are included for
+browsing and review. If there are any problems
+running the file, please contact me immediately
+via e-mail: charliebenjamin1993@gmail.com
